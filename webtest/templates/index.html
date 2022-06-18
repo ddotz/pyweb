@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<h1>index page</h1>
+{# <form method="post">
+    用户名:<input type="text" name="username"><br>
+    密码:<input type="text" name="password">
+    <input type="submit" value="提交">
+</form>
+#}
+<form method="post">
+    {{form.csrf_token}}
+    {{form.username.label}}{{form.username}}<br>
+    {{form.password.label}}{{form.password}}<br>
+    {{form.confirm.label}}{{form.confirm}}<br>
+    {{form.submit}}<br>
+</form>
+{% for message in get_flashed_messages() %}
+{{message}}
+{% endfor %}
+</body>
+</html>
