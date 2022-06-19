@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
     <title>upload</title>
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='upload.css')}}">
 </head>
 <body>
 <form method="POST" enctype="multipart/form-data">
@@ -12,6 +13,7 @@
     <input type="submit" value="提交"><br>
 </form>
 <div id="msg"></div>
+<div style="width:100px,height:100px" class="test"></div>
 </body>
 <script>
 

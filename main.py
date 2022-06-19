@@ -1,9 +1,9 @@
-from flask import Flask, render_template as rt, request, flash
+from flask import Flask, render_template as rt, request, flash, url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, EqualTo
 from flask_sqlalchemy import SQLAlchemy
-import json
+import img
 
 
 app = Flask(__name__)
@@ -58,7 +58,9 @@ def index():
 def upload():
     if request.method == "POST":
         file = request.files.get('image')
-        file.save(f"./image/{file.filename}")
+        file.save(f"./image/back.jpg")
+        img.compos('./image/back.jpg','./image/fore_1.jpg','./image/fore_2.jpg')
+        return rt("image_res.html")
     return rt("upload.html")
 
 @app.route('/handlefile',methods=['GET','POST'])
