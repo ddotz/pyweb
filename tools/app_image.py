@@ -36,8 +36,8 @@ class Application(object):
         sourcesPathList.extend(glob(os.path.join(self.path.get(), '*.jpeg')))
         sourcesPathList.extend(glob(os.path.join(self.path.get(), '*.bmp')))
 
-        if not os.path.exists('result'):
-            os.mkdir('result')
+        if not os.path.exists('../result'):
+            os.mkdir('../result')
         try:
             if not sourcesPathList:
                 messagebox.showinfo('警告', '所选文件夹内容为空')
@@ -48,7 +48,7 @@ class Application(object):
                     res = tmp.resize([int(i) for i in self.size.get().split(',')], Image.ANTIALIAS)
                 except ValueError:
                     res = tmp.resize([int(i) for i in self.size.get().split('，')], Image.ANTIALIAS)
-                res.save(os.path.join('result', p.split('\\')[-1]), quality=95)
+                res.save(os.path.join('../result', p.split('\\')[-1]), quality=95)
             messagebox.showinfo('提示', '修改成功')
         except (FileNotFoundError, AssertionError):
             messagebox.showinfo('警告', '修改失败')
