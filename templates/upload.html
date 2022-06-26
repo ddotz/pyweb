@@ -3,19 +3,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
     <title>upload</title>
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='upload.css')}}">
 </head>
 <body>
 <form method="POST" enctype="multipart/form-data">
     <input id="img_src" type="file" name="image" accept="image/*" onchange="showImg()"><br>
-    <img style="height:300px" src="" id="img_show"><br>
+    <img style="height:300px" src="static/images/ghost.gif" id="img_show"><br>
     <input type="submit" value="提交"><br>
 </form>
 <div id="msg"></div>
-<div style="width:100%" class="test">
-    <img style="width:inherit" src="static/image/ghost.gif">
-</div>
 </body>
 <script>
 

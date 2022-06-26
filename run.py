@@ -12,5 +12,8 @@ if __name__ =='__main__':
     app.register_blueprint(book, url_prefix='/book')
     app.secret_key = 'zhang'
     db.init_app(app)
-    db.create_all(app=app)
+    # db.create_all(app=app)
+    #from gevent import pywsgi
+    # server = pywsgi.WSGIServer(('0.0.0.0',5001),app)
+    # server.serve_forever()
     app.run(host='0.0.0.0',port=5000)

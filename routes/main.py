@@ -24,7 +24,7 @@ def index():
             return "success"
         else:
             flash('信息有误')
-    return rt('index.html', form=login_form)
+    return rt('login.html', form=login_form)
 
 
 @main.route('/zhang/<int:name>')
